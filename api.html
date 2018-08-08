@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+	<title></title>
+</head>
+<body onload="getdata()">
+ <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    
+    function getdata()
+    {
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(xhttp.readyState==4 && xhttp.status==200)
+            {
+                var javaobj = JSON.parse(xhttp.response);
+                console.log(xhttp.responseText);
+                
+            }
+
+            }
+            xhttp.open("GET","https://samples.openweathermap.org/data/2.5/forecast?id=524901&appid=b6907d289e10d714a6e88b30761fae22",true);
+            xhttp.send();
+
+            }
+  </script>
+  <p id="email"></p>
+</body>
+</html>
